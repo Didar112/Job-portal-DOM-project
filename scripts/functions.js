@@ -59,11 +59,7 @@ function toggleEngine(id){
     rejectBtn.classList.remove("bg-blue-400", "text-white")
 
     document.getElementById(id).classList.add("bg-blue-400", "text-white")
-    // if(id==appliedBtn){
-    //     document.querySelector('.no-job-banner').classList.remove("hidden")
-    //     filsec.classList.add("hidden")
-        
-    // }
+   
      if(id==='all-btn'){
         filsec.classList.add('hidden')
         Jobs.classList.remove('hidden')
@@ -76,11 +72,7 @@ function toggleEngine(id){
         filsec.classList.remove('hidden')
         Jobs.classList.add('hidden')
         renderInterview()
-        // if(interviewList.length==0){
-        //     document.querySelector('.no-job-banner').classList.remove("hidden")
-        // } else {
-        //      document.querySelector('.no-job-banner').classList.add("hidden")
-        // }
+        
     }
 
 
@@ -89,11 +81,7 @@ function toggleEngine(id){
         Jobs.classList.add('hidden')
         filsec.classList.remove('hidden')
         renderReject()
-        // if(rejectedList.length==0){
-        //     document.querySelector('.no-job-banner').classList.remove("hidden")
-        // } else {
-        //     document.querySelector('.no-job-banner').classList.add("hidden")
-        // }
+        
     }
     
 }
