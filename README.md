@@ -4,14 +4,18 @@
 
 # Answer -1::
  a) getElementById() is used when we want to get a single element from the html document using it's id, as one id can be used in one single element.
+
+ 
  b) getElementsByClassName is used when we want to get all the elements that shares a common class name. It returns a HTML collection (something like array)
+
+ 
  c) querySelector returns the first one element from all elements with matching css selector. And QuerySelectorALl returns all the elements with matching css selectors in a nodeList. 
 
 
 
  # ANSWER -2::
- to create an element, we can declare a varibale that holds that element. and then append it. For example-
-           const div=document.createElement('div')
+ to create an element, we can declare a varibale that holds that element. and then append it. For example-\
+           const div=document.createElement('div')\
            conatiner.appendChild(div)
 
 
