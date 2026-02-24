@@ -4,6 +4,8 @@ let appliedList =[]
 let interviewList =[]
 let rejectedList=[]
 
+
+
 let currentStatus='all-btn'
 
 
@@ -13,6 +15,8 @@ const inter=document.getElementById('interCount');
 const reject=document.getElementById('rejectCount');
 
 const availjobCount = document.getElementById('available-jobs')
+
+let totalJobs=total.innerText
 
 
 const filsec=document.getElementById("filtered-sec")
@@ -184,8 +188,87 @@ jobWrapper.addEventListener("click", function(event){
 
     //    renderReject()
 
-       if(currentStatus==='inter-btn')
-        renderInterview()
+       if(currentStatus==='inter-btn'){
+
+           renderInterview()
+       }
+
+      }
+
+      else if(event.target.closest('.delete'))
+      {
+
+    //     totalJobs=totalJobs-1
+        
+    //     if(totalJobs<0){
+    //         total.innerText=0
+    //     } else {
+    //         total.innerText=totalJobs
+    //     }
+
+    //     const cardHolder=event.target.closest('.job-holder')
+    //     let delCard=cardHolder.querySelector('.job-card')
+    //     console.log(delCard);
+    //     // delCard.classList.add("hidden")
+    //     cardHolder.remove()
+        
+    //    if(currentStatus=='all-btn'){
+    //     document.querySelector('.no-job-banner').classList.add("hidden")
+    //    }
+
+    //     const card=event.target.closest('.job-card')
+    //     const comName=card.querySelector('.comp-name').innerText
+    //     const post=card.querySelector('.post').innerText
+    //   const salary=card.querySelector('.salary').innerText
+    //   const aplBtn=card.querySelector('.appl-btn').innerText
+    //   const jobDes=card.querySelector('.job-des').innerText
+    //   const intBtn=card.querySelector('.int-btn').innerText
+    //   const rejBtn=card.querySelector('.rej-btn').innerText
+
+    //   const deleteObj = {
+    //     comName,
+    //     post,
+    //     salary,
+    //     aplBtn,
+    //     jobDes,
+    //     intBtn,
+    //     rejBtn
+    //   }
+
+    //   interviewList = interviewList.filter(item=>item.comName!=deleteObj.comName)
+    //   inter.innerText=interviewList.length
+     
+      
+      
+      
+
+
+    //   rejectedList = rejectedList.filter(item=>item.comName!=deleteObj.comName)
+      
+    //   reject.innerText=rejectedList.length
+      
+
+
+     const cardHolder = event.target.closest('.job-holder');  
+    const card = cardHolder.querySelector('.job-card'); 
+    
+    
+    cardHolder.remove(); 
+
+    
+    total.innerText = document.querySelectorAll('#all-job-container .job-holder').length;
+    availjobCount.innerText= document.querySelectorAll('#all-job-container .job-holder').length;
+    
+
+    
+    const comName = card.querySelector('.comp-name').innerText;
+
+    interviewList = interviewList.filter(item => item.comName !== comName);
+    rejectedList = rejectedList.filter(item => item.comName !== comName);
+
+    inter.innerText = interviewList.length;
+    reject.innerText = rejectedList.length;
+
       }
 
 })
